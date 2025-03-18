@@ -1,6 +1,6 @@
 ##----FP1-F01-Lists Refresher----##
 
-chest_inventory = ['sword', 'bottle', 'torch'] #developer list that contains items
+chest_inventory = ['Sword', 'Bottle', 'Torch'] #developer list that contains items
 
 your_inventory = [] #user list to put items into
 
@@ -11,3 +11,20 @@ print("There is a")
 for items in chest_inventory:
     print(items)
 print("You grab the sword and put it into your conveniently empty sheath.")
+your_inventory.append('Sword') #adds sword to inventory
+print(your_inventory[0], "was added to your inventory.") #fancy way to get sword to show
+chest_inventory.remove('Sword') #removes sword from the chest list
+
+print("Would you like to grab anything else?")
+grab = input("> ")
+if grab == 'y' or grab == 'yes':
+    for items in chest_inventory:
+        print("What would you like to grab?")
+        print(chest_inventory)
+        grab_item = input("> ")
+        if grab_item == 'bottle' or grab_item == 'Bottle':
+            print("You grab the bottle and stare at it. It seems useless, but you never know.")
+            your_inventory.append('Bottle')
+            chest_inventory.remove('Bottle')
+            print("Bottle was added to your inventory!")
+            print("Here is your inventory:", your_inventory)
