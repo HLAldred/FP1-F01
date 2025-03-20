@@ -16,15 +16,34 @@ print(your_inventory[0], "was added to your inventory.") #fancy way to get sword
 chest_inventory.remove('Sword') #removes sword from the chest list
 
 print("Would you like to grab anything else?")
-grab = input("> ")
+grab = input("> ") #option to grab
 if grab == 'y' or grab == 'yes':
-    for items in chest_inventory:
+    for items in chest_inventory: #this was supposed to allow for more items to be grabbed but its not working
         print("What would you like to grab?")
         print(chest_inventory)
         grab_item = input("> ")
         if grab_item == 'bottle' or grab_item == 'Bottle':
             print("You grab the bottle and stare at it. It seems useless, but you never know.")
-            your_inventory.append('Bottle')
-            chest_inventory.remove('Bottle')
+            your_inventory.append('Bottle') #adds bottle to inventory
+            chest_inventory.remove('Bottle') #removes bottle from chest
             print("Bottle was added to your inventory!")
-            print("Here is your inventory:", your_inventory)
+            print("Here is your inventory:", your_inventory) #shows full inventory
+        elif grab_item == 'torch' or grab_item == 'Torch':
+            print("You grab the torch, feeling that it will be useful, and slip it into your bag.")
+            your_inventory.append('Torch') #adds torch to inventory
+            chest_inventory.remove('Torch') #removes torch from chest
+            print("Torch was added to your inventory!")
+            print("Here is your inventory:", your_inventory) #shows full inventory
+        else:
+            print("You stare blankly at the chest, then change your mind about grabbing more.")
+            print("Here is your inventory:", your_inventory) #shows full inventory
+else:
+    print("You stare at the chest for a moment, before deciding to leave the rest behind. You don't want to take up too much inventory space.")
+
+print("You continue on your way, peering into your bag.")
+if len(your_inventory) == 1: #only one item
+    print("Inside, there is", len(your_inventory), "item.")#shows # of items
+else: #more items
+    print("Inside, there are", len(your_inventory), "items.")#shows # of items
+
+
